@@ -20,6 +20,13 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
+        .h1, .h2, .h3, h1, h2, h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 
     <title>Bootstrap Ausarbeitung</title>
@@ -51,15 +58,15 @@
             <h1>Einführung in Bootstrap</h1>
             <p class="lead">Bootstrap ist das beliebteste HTML, CSS und JavaScript Framework zur Entwicklung von
                 responsiven <em>mobile first</em> Webprojekten.</p>
-            <p><a href="#title" target="_blank" class="btn btn-primary btn-lg">Zeig mir mehr</a></p>
+            <p><a href="#title" class="btn btn-primary btn-lg">Zeig mir mehr</a></p>
         </div>
 
         <h1 id="title" class="display-3">Bootstrap</h1>
         <h2 id="intro">Einführung</h2>
-        <p>In der folgenden Arbeit wird das CSS-Frontend-Framework „Bootstrap“ genauer vorgestellt. Zunächst werden
-            dabei
-            die Ziele und Einsatzmöglichkeiten des Frameworks beschrieben. Anschließend erfolgt eine Vorstellung der
-            enthaltenen Funktionen mit Anwendungsbeispielen, sowie schließlich eine Tutorial zum Setup des Frameworks.
+        <p>In der folgenden Arbeit wird das CSS-Frontend-Framework „Bootstrap“ genauer vorgestellt.
+            Zunächst werden dabei die Ziele und Einsatzmöglichkeiten des Frameworks beschrieben.
+            Anschließend erfolgt ein Tutorial zum Setup des Frameworks, sowie schließlich eine Vorstellung der
+            enthaltenen Funktionen mit Anwendungsbeispielen.
         </p>
         <p>Das Dokument wurde als HTML-Webseite erstellt, um eine direkte Vorstellung der UI-Komponenten zu ermöglichen.
             So können diese direkt in den Text eingebunden und der Quelltext untersucht werden, ohne auf Screenshots und
@@ -72,7 +79,8 @@
             ob Desktop-PC, Tablet oder Smartphone.</P>
         <p>Bootstrap ist seit August 2011 Open Source, der Quellcode ist auf <a
                 href="https://github.com/twbs/bootstrap">GitHub</a> verfügbar.
-            Das Framework entstand ursprünglich bei Twitter, wo der Bootstrap-Erfinder Mark Otto die diversen im
+            Das Framework entstand ursprünglich bei Twitter unter dem Namen <em>Twitter Blueprint</em>, wo Mark Otto die
+            diversen im
             Unternehmen
             eingesetzten Tools zur Oberflächenentwicklung vereinheitlichen wollte.
             Die aktuelle Version <a href="https://github.com/twbs/bootstrap/releases/tag/v4.5.3">4.5.3</a> wurde am 13.
@@ -84,150 +92,418 @@
             enthalten
             sind und mittels weiterer Parameter konfiguriert werden können, ohne CSS-Code schreiben zu müssen.</p>
         <!-- 6-8 Seiten -->
-        <h2 id="functions">Funktionen</h2>
-        <h3 id="layout">Layout</h3>
-        <h4 id="container">Container</h3>
+        <h2 id="discussion">Diskussion</h2>
+        <h3 id="comparison">Vergleich zu anderen Frameworks
+            <small class='text-muted'>Was Bootstrap kann - und was nicht</small>
+        </h3>
+        <p>
+            Bei Bootstrap handelt es sich um ein reines Frontend-Framework zur schnellen Erstellung von
+            Benutzeroberflächen mittels vorgefertigter Komponenten. Mithilfe eines intuitiven Gittersystems können
+            responsive Webseiten erstellt werden.
+        </p>
+        <p>
+            Ein großer Vorteil bei der Verwendung von Bootstrap liegt in der Zeitersparnis im Vergleich zur händischen
+            Erstellung von CSS-Stylesheets. Außerdem bietet das Framework Cross-Platform-Unterstützung, wodurch man sich
+            keine Sorgen machen muss, ob die entwickelte Webseite auf dem Androidmobiltelefon genauso gut aussieht, wie
+            in einer Safari-Instanz auf einem Mac-Rechner. Auch liefert es eine konsistene UI, welche <em>"out of the
+                box"</em>, ohne Modifikation, gut aussieht. Durch die <em>mobile first</em>-Philosophie wird eine
+            angenehme Benutzererfahrung für mobile Nutzer sichergestellt, welche mit bereits über 50% allen erzeugten
+            Traffics einen immer größer werdenden Teil aller Internetnutzer darstellen.
+        </p>
+        <br>
+        <p>
+            Die Verwendung des Frameworks zieht natürlich auch Nachteile mit sich.
+        </p>
+        <p> Da das Framework sehr populär ist, sollte eine starke Personalisierung der verwendeten Komponenten erfolgen,
+            um sich von dem <em>"Einheitsbrei"</em> anderer Webseiten abzuheben.
+            So müssen möglicherweise sehr viele Styles überschrieben werden.
+        </p>
+        <p>
+            Dass Bindung an <b>jQuery</b> zur Verwendung von JavaScript wird von einigen Webentwicklern als Negativpunkt
+            empfunden.
+        </p>
+        <p>
+            Das volle Framework kann zu schwer (im Sinne der Dateigröße) und langsam sein, weil meist nur ein kleiner
+            Prozentteil der Komponenten verwendet wird. Daher ist ein "cherry-picking" der genutzten Komponenten und die
+            eigene Kompilierung einer modifizierten Bootstrapvariante zu empfehlen.
+        </p>
+        <br>
+        <p>
+            Bootstrap ist <em>kein</em> Full-Stack-Framework, bietet also keinerlei Werkzeuge zur Lösung von
+            Backendproblemstellungen.
+            Es sollte also mit anderen Frontend-Frameworks, wie <b>TODO</b>> verglichen werden.
+        </p>
+        <h4>Django</h4>
+        <p>
+            Wie bereits erwähnt lässt sich Bootstrap nicht wirklich mit Django vergleichen, da diese deutlich
+            unterschiedliche Einsatzzwecke bedienen.
+        </p>
+        <p>
+            Während das in Python geschriebene Django ein Full-Stack-Framework ist, beschäftigt sich Bootstrap mit
+            seiner Kombination aus CSS und JavaScript ausschließlich mit dem Frontend einer Webseite, also der dem
+            Nutzer präsentierten Oberfläche. Bootstrap kann hingegen <b>mit</b> Django verwendet werden.
+        </p>
+        <p>
+            Django verwendet die <em>Model-View-Controller</em>-Architektur, unterteilt alle Aufgaben einer Webseite
+            also in drei Schichten. Bootstrap kann in diesem Modell für den <em>View</em>-Teil komplementär eingesetzt
+            werden. Dazu werden einfach die Bootstrap-Komponenten in die HTML-Dateien integriert. Zuvor muss dafür eine
+            Bootstrapinstallation sichergestellt werden und die nötigen CSS und JavaScript-Dateien geladen werden, wie
+            im Setup-Kapitel beschrieben.
+        </p>
+        <p>
+            Das Paket <a href="https://pypi.org/project/django-bootstrap4/">django-bootstrap4</a> bietet zudem die
+            Möglichkeit, mittels Python-Programmcode Bootstrap-spezifische Komponenten zu erzeugen und somit visuell
+            ansprechende Templates zu erzeugen. Möchte man Bootstrap nur zur ansprechenderen Darstellung von
+            Django-Formularen verwenden, bietet sich <a
+                href="https://pypi.org/project/django-crispy/">django-crispy-forms</a> an.
+        </p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                Was besser
+            </li>
+            <li class="list-group-item">
+                wann verwende ich was
+            </li>
+            <li class="list-group-item">
+                Vergleich mit bzw. Abgrenzung zu Full Stack Frameworks (Django, Rails, Express (???), Spring(boot?)) und
+                zu
+                größeren JS-Frameworks (vue, angular, react, Ember)
+                Sass Preprocessser..
+                vs Foundation by ZURB, Semantic UI, Pure by Yahoo, Bulma (CSS only),Skeleton
+            </li>
+            </ul>
+            
+            <h2 id="setup">Setup</h2>
+            <div>
+                <p>Um mit Bootstrap loszulegen, werden nur einige Imports im Webdokument benötigt. Bootstrap besteht aus
+                    CSS-Stylesheets und JavaScript-Plugins, welche inkludiert werden müssen.
+                    Zur Integration existieren verschiedene Möglichkeiten:
+                </p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Manueller Download der kompilierten und minimierten CSS-Bundles und
+                        JavaScript-Plugins</li>
+                    <li class="list-group-item">Download und eigene Kompilierung der Sass-, JavaScript- und
+                        Dokumentationsdateien. Dafür wird ein Sass Compiler, Node.js, Ruby, npm sowie ein Autoprefixer
+                        benötigt. Alle weiteren Build-Werkzeuge werden mit dem Sourcecode mitgeliefert. </li>
+                    <li class="list-group-item">Installation via Paketmanager, wie npm, yarn oder NuGet. Benötigt zudem
+                        einen Sass compiler und Autoprefixer.</li>
+                    <li class="list-group-item">Auslieferung einer gecacheten Bootstrap-Version mittels jsDelivr</li>
+                </ul>
+                <p>Die Integration der kompilierten Pakete mittels <b>jsDelivr</b> stellt dabei die einfachste
+                    Möglichkeit
+                    dar.</p>
+                <h3>CSS</h3>
+                Für CSS genügt es, den Stylesheet <code>&lt;link&gt;</code> im Beginn des
+                <code>&lt;head&gt;</code>-Elements
+                vor allen anderen CSS-Stylesheets zu laden:
+                <pre><code class="prettyprint">
+                        &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"&gt;
+                      </code></pre>
+                <h3>JavaScript</h3>
+                <p>Die JavaScript-Plugins werden nicht zwingend für das Bootstrap-Grundgerüst benötigt, jedoch basieren
+                    eine
+                    Vielzahl der integrierten Komponenten auf JavaScript, wie beispielsweise Dropdown-Felder,
+                    einklappbare
+                    Collapse-Bereiche, oder Toast- und Alert-Mitteilungen.</p>
+
+                <p>Bootstrap benötigt neben dem eigenen JavaScript-Plugins auch noch die "Tooltip & Popover Positioning
+                    Engine" Popper, sowie jQuery. Popper kann gebündelt mit dem Bootstrap-Paket, oder auch seperat
+                    eingebunden werden. In jedem Fall muss das jQuery-Paket gesondert geladen werden.</p>
+                <p>Die zwei bzw. drei <code>&lt;script&gt;</code>-Anweisungen werden einfach am Ende des
+                    <code>&lt;body&gt;</code>-Tags eingefügt:</p>
+                <pre><code class="prettyprint">
+    &lt;!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) --&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+    &lt;!-- Option 2: jQuery, Popper.js, and Bootstrap JS --&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"&gt;&lt;/script&gt;
+                      </code></pre>
+            </div>
+
+            Eine vollständige, minimale Startvorlage folgt hinter diesem Button:
+            <div class="template-example">
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTemplate"
+                        aria-expanded="false" aria-controls="collapseTemplate">
+                        Quellcode anzeigen
+                    </button>
+                </p>
+                <div class="collapse" id="collapseTemplate">
+                    <div class="card card-body">
+                        <pre><code class="prettyprint">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;!-- Required meta tags --&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"&gt;
+
+    &lt;title&gt;Hello, world!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+    &lt;!-- Optional JavaScript; choose one of the two! --&gt;
+
+    &lt;!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) --&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+    &lt;!-- Option 2: jQuery, Popper.js, and Bootstrap JS --&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <p>Requirements (jQuery, JS, CSS)</p>
+            <h2 id="functions">Funktionen</h2>
+            <h3 id="layout">Layout</h3>
+            <h4 id="container">Container</h4>
             <code>container</code> sind die Grundbausteine für Layouts in Bootstrap. In Containern können Inhalte
             eingesetzt, gepaddet und ausgerichtet werden. Dabei kann entweder die maximale Breite in Pixeln festgelegt
             werden, oder aber durch Verwendung von <code>.container-fluid</code> auch dynamische Skalierungen basierend
             auf <em>Breakpoints</em>, welche die Viewportgröße beschreiben, verwendet werden.
-            <h4 id="grid">Grid-System</h3>
-                Bootstrap untergliedert die Bildschirmfläche in ein Gitter mit bis zu 12 Spalten, welches automatisch
-                anhand der
-                Viewportgröße skaliert wird. (Es basiert auf flexbox.)
-                Der Entwickler kann dabei zwischen 5 verschiedenen Spaltengrößen von "extra small" bis "extra large"
-                wählen. Durch
-                das Responsive Design werden die Spalten bei einem Smartphone mit schmalen Bildschirm automatisch
-                horiziontal
-                untereinander angezeigt.
-                <div class="container mt-3">
-                    <!--Row with two equal columns-->
-                    Zeile mit gleich großen Spalten:
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="demo-content">.col-md-6</div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="demo-content bg-alt">.col-md-6</div>
-                        </div>
+            <h4 id="grid">Grid-System</h4>
+            Bootstrap untergliedert die Bildschirmfläche in ein Gitter mit bis zu 12 Spalten, welches automatisch
+            anhand der
+            Viewportgröße skaliert wird. (Es basiert auf flexbox.)
+            Der Entwickler kann dabei zwischen 5 verschiedenen Spaltengrößen von "extra small" bis "extra large"
+            wählen. Durch
+            das Responsive Design werden die Spalten bei einem Smartphone mit schmalen Bildschirm automatisch
+            horiziontal
+            untereinander angezeigt.
+            <div class="container mt-3">
+                <!--Row with two equal columns-->
+                Zeile mit gleich großen Spalten:
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="demo-content">.col-md-6</div>
                     </div>
-
-                    <!--Row with two columns divided in 1:2 ratio-->
-                    Zeile mit Spalten im Verhältnis 1:2:
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="demo-content">.col-md-4</div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="demo-content bg-alt">.col-md-8</div>
-                        </div>
+                    <div class="col-md-6">
+                        <div class="demo-content bg-alt">.col-md-6</div>
                     </div>
+                </div>
 
-                    <!--Row with two columns divided in 1:3 ratio-->
-                    Zeile mit Spalten im Verhältnis 1:3:
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="demo-content">.col-md-3</div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="demo-content bg-alt">.col-md-9</div>
+                <!--Row with two columns divided in 1:2 ratio-->
+                Zeile mit Spalten im Verhältnis 1:2:
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="demo-content">.col-md-4</div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="demo-content bg-alt">.col-md-8</div>
+                    </div>
+                </div>
+
+                <!--Row with two columns divided in 1:3 ratio-->
+                Zeile mit Spalten im Verhältnis 1:3:
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="demo-content">.col-md-3</div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="demo-content bg-alt">.col-md-9</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-example">
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse"
+                        data-target="#collapseContainer" aria-expanded="false" aria-controls="collapseContainer">
+                        Quellcode anzeigen
+                    </button>
+                </p>
+                <div class="collapse" id="collapseContainer">
+                    <div class="card card-body">
+                        <pre><code class="prettyprint">
+                                &lt;div class="container mt-3"&gt;
+                                        Zeile mit gleich großen Spalten:
+                                        &lt;div class="row"&gt;
+                                            &lt;div class="col-md-6"&gt;
+                                                &lt;div class="demo-content"&gt;.col-md-6&lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="col-md-6"&gt;
+                                                &lt;div class="demo-content bg-alt"&gt;.col-md-6&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                    
+                                        Zeile mit Spalten im Verhältnis 1:2:
+                                        &lt;div class="row"&gt;
+                                            &lt;div class="col-md-4"&gt;
+                                                &lt;div class="demo-content"&gt;.col-md-4&lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="col-md-8"&gt;
+                                                &lt;div class="demo-content bg-alt"&gt;.col-md-8&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                    
+                                        Zeile mit Spalten im Verhältnis 1:3:
+                                        &lt;div class="row"&gt;
+                                            &lt;div class="col-md-3"&gt;
+                                                &lt;div class="demo-content"&gt;.col-md-3&lt;/div&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="col-md-9"&gt;
+                                                &lt;div class="demo-content bg-alt"&gt;.col-md-9&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+            <p>
+                Möchte man die Anzeige seiner Website in verschiedenen Geräten manuell steuern, kann dies über dass
+                <code>class</code>-Attribut modifiziert werden. So kann beispielsweise spezifisch für einen
+                mittelgroßen
+                Tabletbildschirm eine andere Anzahl an Zeilen definiert werden:
+            </p>
+            <pre><code class="prettyprint">class="col-lg-4 col-md-6 col-xl-3"</code></pre>
+            zeigt am großen Bildschirm 4 Zeilen, bei mittleren 6 und bei sehr großen Bildschirmen 3 Zeilen. die
+            Anzahl an
+            Spalten wird dann basierend auf der gesamten Zellenzahl angepasst.
+            
+            <p>
+                Die Gitterspalten können auch ineinander verschachtelt werden.
+                Der Parameter <code>offset</code> ermöglicht - wieder spezifisch zur Viewportgröße - einen Versatz
+                der Spalten
+                zu beschreiben.
+            </p>
+            <h3 id="content">Content</h3>
+            <h4>Typographie</h4>
+            <p>
+                Bootstrap erweitert die in HTML enthaltenen Textformatierungsfunktionen.
+                So kann mittels der <code>display</code>-Klasse eine größere, aber schmalere Überschrift definiert
+                werden, dazu sei auf den <a href="#title">Titel</a> dieses Dokuments verwiesen. Fügt man innerhalb der <code>h*</code>-Headlines ein <code>&lt;small&gt;</code>-Element ein, kann man eine kleinere Unterüberschrift erstellen, wie <a href='#comparison'>hier</a> zu sehen.
+            </p>
+            <p>Absätze können zudem</p>
+            <p class="text-left">links (<code>class="text-left"</code>) </p>
+            <p class="text-center">mittig (<code>class="text-center"</code>), </p>
+            <p class="text-right">rechts (<code>class="text-right"</code>), </p>
+            <p class="text-justify">oder mittels Blocksatz (benötigt etwas mehr inhaltslosen Text um die Wirkung zu
+                sehen, am Besten einfach das Fenter verkleinern) (<code>class="text-justify"</code>) </p>
+            <p>ausgerichtet werden. Auch diese Formatierung kann für alle Viewportgrößen spezifisch definiert werden. </p>
+            <p class="text-lg-right"> So ist dieser Text beispielsweise nur bei großen bis sehr großen Bildschirmen rechtsbündig.</p>
+            <br>
+            <h4>Code</h4>
+            Ein <code>blockquote</code>-Element erlaubt das Einbetten von Zitaten in den Text:
+            <blockquote class="blockquote text-center">
+                <p class="mb-0">You can also give pretty look to your blockquotes — Just define the blockquotes
+                    using the standard &lt;blockquote&gt; element and bootstrap's style sheet will do the rest.</p>
+                <footer class="blockquote-footer">by <cite>TutorialRepublic</cite></footer>
+            </blockquote>
+            <h4>Bilder</h4>
+            <h4>Tabellen</h4>
+            <h4>Abbildungen</h4>
+
+            <h3 id="components">Komponenten</h3>
+            <h4 id="forms">Formulare</h4>
+            <p>
+                Während Formulare auch mittels HTML und CSS manuell erstellt werden können, vereinfacht das Framework
+                dies
+                deutlich. Ein Formular ist so nur wenige Zeilen Code entfernt, wie das folgende Login-Formular zeigt:
+            </p>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">E-Mail-Adresse</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="E-Mail-Adresse eingeben">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Passwort</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Passwort">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Eingeloggt bleiben</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Anmelden</button>
+            </form>
+            <p></p>
+            <div class="form-example">
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseForm"
+                        aria-expanded="false" aria-controls="collapseForm">
+                        Quellcode anzeigen
+                    </button>
+                </p>
+                <div class="collapse" id="collapseForm">
+                    <div class="card card-body">
+                        <pre><code class="prettyprint">
+                                &lt;form&gt;
+                                    &lt;div class="form-group"&gt;
+                                      &lt;label for="exampleInputEmail1"&gt;E-Mail-Adresse&lt;/label&gt;
+                                      &lt;input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail-Adresse eingeben"&gt;
+                                      &lt;small id="emailHelp" class="form-text text-muted"&gt;We'll never share your email with anyone else.&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="form-group"&gt;
+                                      &lt;label for="exampleInputPassword1"&gt;Passwort&lt;/label&gt;
+                                      &lt;input type="password" class="form-control" id="exampleInputPassword1" placeholder="Passwort"&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="form-check"&gt;
+                                      &lt;input type="checkbox" class="form-check-input" id="exampleCheck1"&gt;
+                                      &lt;label class="form-check-label" for="exampleCheck1"&gt;Eingeloggt bleiben&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;button type="submit" class="btn btn-primary"&gt;Anmelden&lt;/button&gt;
+                                  &lt;/form&gt;
+                                </code></pre>
+                    </div>
+                </div>
+            </div>
+            <h4>Jumbotron</h4>
+            <h4>Navbar</h4>
+            <p>Wird ganz oben verwendet..</p>
+            <h4>Navs</h4>
+            <p>TODO sidebar navigation</p>
+            <h4>Collapse</h4>
+            <p>Einklappbare Textbausteine werden bei allen "Quellcode anzeigen" Buttons verwendet. Dabei werden die zu klappenden <code>&lt;div&gt;</code>-Elemente der Klasse <code>class="collapse"</code> zugewiesen. Zum Klappen muss keine JavaScript-Methode erzeugt werden, sondern man gibt einem Link oder Button die Funktion <em>collapse</em> als Parameter für <code>data-toggle</code> mit. Im <code>data-target</code> wird nun noch die ID des ein- und auszuklappenden Zielobjekts angegeben, und schon ist man fertig.</p>
+            <p>Es können auch mehrere Objekte gleichzeitig geklappt werden, indem man als Target den JQuery-Selector angibt.</p>
+            <p>Mehrere Bausteine können wie ein Akkordion nacheinander aufgeklappt werden, indem man in jedem der zu klappenden Bereiche das gemeinsame Elternattribut <code>data-parent</code> setzt.</p>
+            <h4>Carousel</h4>
+            <h4>Card</h4>
+            <p>Karten sind Container, welche aufgrund der hohen Flexiblität sehr häufig eingesetzt werden.</p>
+            <p>In dieser Webseite wurden sie beispielsweise für die <a href="#contact-card">Kontaktkarte</a> verwendet.</p>
+            <h2 id="conclusion">Fazit</h2>
+            <h2 id="sources">Quellen</h2>
+            Die Codebeispiele wurden von <a
+                href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/">TutorialRepublic</a> und der <a
+                href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">offiziellen Dokumentation</a>
+            entnommen.
+            <a href="https://bootstrapcreative.com/pros-cons-using-bootstrap-web-development/">BootstrapCreative</a>
+            <h2 id="about">Über</h2>
+            <p>Diese Website wurde als interaktive Ausarbeitung zur Vorlesung "Agile Webentwicklung mit Python"
+                entwickelt.</p>
+            <div class="card" style="max-width: 500px;">
+                <div class="row no-gutters">
+                    <div class="col-sm-5" style="background: #868e96;">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="card-img-top h-100" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                        </svg>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-body" style="width: 18rem;" id="contact-card">
+                            <h5 class="card-title">Simon Müller</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Hochschule Augsburg</h6>
+                            <p class="card-text">Student im Master Informatik hier an der Hochschule in Augsburg.
+                            </p>
+                            <a href="mailto:simon.mueller3@hs-augsburg.de"
+                                class="btn btn-primary stretched-link">Kontaktieren</a>
                         </div>
                     </div>
                 </div>
-                <p>
-                    Möchte man die Anzeige seiner Website in verschiedenen Geräten manuell steuern, kann dies über dass
-                    <code>class</code>-Attribut modifiziert werden. So kann beispielsweise spezifisch für einen
-                    mittelgroßen
-                    Tabletbildschirm eine andere Anzahl an Zeilen definiert werden:
-                <pre><code>class="col-lg-4 col-md-6 col-xl-3"</code></pre>
-                zeigt am großen Bildschirm 4 Zeilen, bei mittleren 6 und bei sehr großen Bildschirmen 3 Zeilen. die
-                Anzahl an
-                Spalten wird dann basierend auf der gesamten Zellenzahl angepasst.
-                </p>
-                <p>
-                    Die Gitterspalten können auch ineinander verschachtelt werden.
-                    Der Parameter <code>offset</code> ermöglicht - wieder spezifisch zur Viewportgröße - einen Versatz
-                    der Spalten
-                    zu beschreiben.
-                </p>
-                <h3 id="content">Content</h3>
-                <h4>Typographie</h4>
-                <p>
-                    Bootstrap erweitert die in HTML enthaltenen Textformatierungsfunktionen.
-                    So kann mittels der <code>display</code>-Klasse eine größere, aber schmalere Überschrift definiert
-                    werden, dazu sei auf den <a href="#title">Titel</a> dieses Dokuments verwiesen.
-                </p>
-                <p>Absätze können zudem</p>
-                <p class="text-left">links, </p>
-                <p class="text-center">mittig, </p>
-                <p class="text-right">rechts, </p>
-                <p class="text-justify">oder mittels Blocksatz (benötigt etwas mehr inhaltslosen Text um die Wirkung zu
-                    sehen, am Beisten einfach das Fenter verkleinern)</p>
-                <p>ausgerichtet werden. Auch diese Formatierung kann für alle Viewportgrößen spezifisch definiert
-                    werden. </p>
-                <code>blockquote</code> erlaubt das Einbetten von Zitaten in den Text:
-                <blockquote class="blockquote text-center">
-                    <p class="mb-0">You can also give pretty look to your blockquotes — Just define the blockquotes
-                        using the standard &lt;blockquote&gt; element and bootstrap's style sheet will do the rest.</p>
-                    <footer class="blockquote-footer">by <cite>TutorialRepublic</cite></footer>
-                </blockquote>
-
-
-                <h3 id="components">Komponenten</h3>
-                <h4 id="forms">Formulare</h4>
-                Während Formulare auch mittels HTML und CSS manuell erstellt werden könne, vereinfacht das Framework
-                dies deutlich, ein Formular ist so nur wenige Zeilen Code entfernt, wie das folgende Login-Formular
-                zeigt:
-                <form class="form-inline">
-                    <div class="form-group mr-2">
-                        <label class="sr-only" for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="E-Mail">
-                    </div>
-                    <div class="form-group mr-2">
-                        <label class="sr-only" for="inputPassword">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Passwort">
-                        <small class="text-muted">
-                            Muss 8-20 Zeichen lang sein.
-                        </small>
-                    </div>
-                    <div class="form-group mr-2">
-                        <label><input type="checkbox" class="mr-1"> E-Mail-Adresse merken</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Einloggen</button>
-                </form>
-
-                <h2 id="setup">Setup</h2>
-                <p>Requirements (jQuery, JS, CSS)</p>
-                <h2 id="conclusion">Fazit</h2>
-                <h2 id="sources">Quellen</h2>
-                Die Codebeispiele wurden von <a
-                    href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/">TutorialRepublic</a> und der <a
-                    href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">offiziellen Dokumentation</a>
-                entnommen.
-
-                <h2 id="about">Über</h2>
-                <p>Diese Website wurde als interaktive Ausarbeitung zur Vorlesung "Agile Webentwicklung mit Python"
-                    entwickelt.</p>
-                <div class="card" style="max-width: 500px;">
-                    <div class="row no-gutters">
-                        <div class="col-sm-5" style="background: #868e96;">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="card-img-top h-100"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                            </svg>
-                        </div>
-                        <div class="col-sm-7">
-                            <div class="card-body">
-                                <h5 class="card-title">Simon Müller</h5>
-                                <p class="card-text">Student im Master Informatik an der Hochschule Augsburg.
-                                </p>
-                                <a href="mailto:simon.mueller3@hs-augsburg.de"
-                                    class="btn btn-primary stretched-link">Kontaktieren</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
     </div>
     <!-- JS files: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -236,6 +512,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+    <!-- prettify code blocks, not bootstrap specific -->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 </body>
 
