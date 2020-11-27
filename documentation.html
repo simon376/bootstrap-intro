@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <!-- Code Highlighting -->
-    <link rel="stylesheet"
-      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/github-gist.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/styles/github-gist.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.0/build/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
@@ -26,14 +25,22 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
-        .h1, .h2, .h3, h1, h2, h3 {
-  margin-top: 30px;
-  margin-bottom: 15px;
+
+        .h1,
+        .h2,
+        .h3,
+        h1,
+        h2,
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        body {
+            margin-bottom: 30px;
         }
         html {
             scroll-behavior: smooth;
         }
-
     </style>
 
     <title>Bootstrap Ausarbeitung</title>
@@ -49,8 +56,9 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <a href="#intro" class="nav-item nav-link active">Einführung</a>
-                    <a href="#functions" class="nav-item nav-link">Funktionen</a>
                     <a href="#setup" class="nav-item nav-link">Setup</a>
+                    <a href="#functions" class="nav-item nav-link">Funktionen</a>
+                    <a href="#comparison" class="nav-item nav-link">Vergleich</a>
                     <a href="#conclusion" class="nav-item nav-link">Fazit</a>
                     <a href="#sources" class="nav-item nav-link">Quellen</a>
                 </div>
@@ -70,18 +78,24 @@
 
         <h1 id="title" class="display-3">Bootstrap</h1>
         <h2 id="intro">Einführung</h2>
-        <p>In der folgenden Arbeit wird das Frontend-Framework <b>Bootstrap</b> genauer vorgestellt.
-            Zunächst werden dabei die Ziele und Einsatzmöglichkeiten des Frameworks beschrieben.
-            Anschließend erfolgt ein Tutorial zum Setup des Frameworks, sowie schließlich eine Vorstellung der
-            enthaltenen Funktionen mit Anwendungsbeispielen.
+        <p>In der folgenden Arbeit wird das Frontend-Framework <a href="https://getbootstrap.com/"><b>Bootstrap</b></a>
+            genauer vorgestellt.
+            Zunächst wird das Framework kurz vorgestellt.
+            Anschließend erfolgt ein Tutorial zum Setup des Frameworks, sowie eine Vorstellung der
+            enthaltenen Funktionen mit Anwendungsbeispielen. Schließlich folgt ein Vergleich mit anderen CSS-Frameworks.
         </p>
         <p>Das Dokument wurde als HTML-Webseite erstellt, um eine direkte Vorstellung der UI-Komponenten zu ermöglichen.
             So können diese direkt in den Text eingebunden und der Quelltext untersucht werden, ohne auf Screenshots und
-            ausufernde Codeblöcke zurückgreifen zu müssen. Dieses Dokument liefert also eine beispielhafte Webseite, wie sie mittels Bootstrap erstellt werden kann.</p>
-        <p>Bootstrap ist ein Framework welches mittels <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>, <abbr title="Cascading Style Sheets" class="initialism">CSS</abbr> und JavaScript zur Entwicklung von Weboberflächen
+            ausufernde Codeblöcke zurückgreifen zu müssen. Dieses Dokument liefert also eine beispielhafte Webseite, wie
+            sie ausschließlich mittels Bootstrap-Komponenten erstellt werden kann.</p>
+        <p>Bootstrap ist ein Framework welches mittels <abbr title="HyperText Markup Language"
+                class="initialism">HTML</abbr>, <abbr title="Cascading Style Sheets" class="initialism">CSS</abbr> und
+            JavaScript zur Entwicklung von Weboberflächen
             eingesetzt wird. Dabei liegt der Fokus zunächst auf der Darstellung auf mobilen Endgeräten, also einer
             &quot;mobile first&quot;-Strategie, wobei responsives Webdesign korrekte Darstellung auf allen Geräten
-            ermöglicht. Responsive Web Design bedeutet, dass sich die Darstellung einer Webseite auf die Auflösung, sowie die Eingabemethoden des (mobilen) Endgeräts anpasst. So kann stets eine korrekte Darstellung und eine angenehme Nutzungserfahrung gewährleistet werden, egal ob mittels Desktop-PC, Tablet oder Smartphone.</p>
+            ermöglicht. Responsive Web Design bedeutet, dass sich die Darstellung einer Webseite auf die Auflösung,
+            sowie die Eingabemethoden des (mobilen) Endgeräts anpasst. So kann stets eine korrekte Darstellung und eine
+            angenehme Nutzungserfahrung gewährleistet werden, egal ob mittels Desktop-PC, Tablet oder Smartphone.</p>
         <p>Bootstrap ist seit August 2011 Open Source, der Quellcode ist auf <a
                 href="https://github.com/twbs/bootstrap">GitHub</a> verfügbar.
             Das Framework entstand ursprünglich bei Twitter unter dem Namen <em>Twitter Blueprint</em>, wo Mark Otto die
@@ -98,44 +112,45 @@
             enthalten
             sind und mittels weiterer Parameter konfiguriert werden können, ohne CSS-Code schreiben zu müssen.</p>
 
-            <h2 id="setup">Setup</h2>
-            <div>
-                <p>Um mit Bootstrap loszulegen, werden nur einige Imports im Webdokument benötigt. Bootstrap besteht aus
-                    CSS-Stylesheets und JavaScript-Plugins, welche inkludiert werden müssen.
-                    Zur Integration existieren verschiedene Möglichkeiten:
-                </p>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Manueller Download der kompilierten und minimierten CSS-Bundles und
-                        JavaScript-Plugins</li>
-                    <li class="list-group-item">Download und eigene Kompilierung der <abbr title="Syntactically Awesome Stylesheets">Sass</abbr>-, JavaScript- und
-                        Dokumentationsdateien. Dafür wird ein Sass-Compiler, Node.js, Ruby, npm sowie ein Autoprefixer
-                        benötigt. Alle weiteren Build-Werkzeuge werden mit dem Sourcecode mitgeliefert. </li>
-                    <li class="list-group-item">Installation via Paketmanager (npm, yarn, NuGet, etc.). Benötigt zudem
-                        einen Sass-Compiler und Autoprefixer.</li>
-                    <li class="list-group-item">Auslieferung einer gecacheten Bootstrap-Version mittels jsDelivr</li>
-                </ul>
-                <p>Die Integration der kompilierten Pakete mittels <em>jsDelivr</em> stellt dabei die einfachste
-                    Möglichkeit
-                    dar.</p>
-                <h3>CSS</h3>
-                <p>Für CSS genügt es, den Stylesheet <code>&lt;link&gt;</code> im Beginn des
+        <h2 id="setup">Setup</h2>
+        <div>
+            <p>Um mit Bootstrap loszulegen, werden nur einige Imports im Webdokument benötigt. Bootstrap besteht aus
+                CSS-Stylesheets und JavaScript-Plugins, welche inkludiert werden müssen.
+                Zur Integration existieren verschiedene Möglichkeiten:
+            </p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Manueller Download der kompilierten und minimierten CSS-Bundles und
+                    JavaScript-Plugins</li>
+                <li class="list-group-item">Download und eigene Kompilierung der <abbr
+                        title="Syntactically Awesome Stylesheets">Sass</abbr>-, JavaScript- und
+                    Dokumentationsdateien. Dafür wird ein Sass-Compiler, Node.js, Ruby, npm sowie ein Autoprefixer
+                    benötigt. Alle weiteren Build-Werkzeuge werden mit dem Sourcecode mitgeliefert. </li>
+                <li class="list-group-item">Installation via Paketmanager (npm, yarn, NuGet, etc.). Benötigt zudem
+                    einen Sass-Compiler und Autoprefixer.</li>
+                <li class="list-group-item">Auslieferung einer gecacheten Bootstrap-Version mittels jsDelivr</li>
+            </ul>
+            <p>Die Integration der kompilierten Pakete mittels <em>jsDelivr</em> stellt dabei die einfachste
+                Möglichkeit
+                dar.</p>
+            <h3>CSS</h3>
+            <p>Für CSS genügt es, den Stylesheet <code>&lt;link&gt;</code> im Beginn des
                 <code>&lt;head&gt;</code>-Elements
                 vor allen anderen CSS-Stylesheets zu laden:</p>
-                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"&gt;
+            <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"&gt;
                       </code></pre>
-                <h3>JavaScript</h3>
-                <p>Die JavaScript-Plugins werden nicht zwingend für das Bootstrap-Grundgerüst benötigt, jedoch basieren
-                    eine
-                    Vielzahl der integrierten Komponenten auf JavaScript, wie beispielsweise Dropdown-Felder,
-                    einklappbare
-                    Collapse-Bereiche, oder Toast- und Alert-Mitteilungen.</p>
+            <h3>JavaScript</h3>
+            <p>Die JavaScript-Plugins werden nicht zwingend für das Bootstrap-Grundgerüst benötigt, jedoch basieren
+                eine
+                Vielzahl der integrierten Komponenten auf JavaScript, wie beispielsweise Dropdown-Felder,
+                einklappbare
+                Collapse-Bereiche, oder Toast- und Alert-Mitteilungen.</p>
 
-                <p>Bootstrap benötigt neben dem eigenen JavaScript-Plugins auch noch die "Tooltip & Popover Positioning
-                    Engine" Popper, sowie jQuery. Popper kann gebündelt mit dem Bootstrap-Paket, oder auch separat
-                    eingebunden werden. In jedem Fall muss das jQuery-Paket gesondert geladen werden.</p>
-                <p>Die zwei bzw. drei <code>&lt;script&gt;</code>-Anweisungen werden einfach am Ende des
-                    <code>&lt;body&gt;</code>-Tags eingefügt:</p>
-                <pre><code class="language-html">
+            <p>Bootstrap benötigt neben dem eigenen JavaScript-Plugins auch noch die "Tooltip & Popover Positioning
+                Engine" Popper, sowie jQuery. Popper kann gebündelt mit dem Bootstrap-Paket, oder auch separat
+                eingebunden werden. In jedem Fall muss das jQuery-Paket gesondert geladen werden.</p>
+            <p>Die zwei bzw. drei <code>&lt;script&gt;</code>-Anweisungen werden einfach am Ende des
+                <code>&lt;body&gt;</code>-Tags eingefügt:</p>
+            <pre><code class="language-html">
     &lt;!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) --&gt;
     &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"&gt;&lt;/script&gt;
     &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"&gt;&lt;/script&gt;
@@ -145,19 +160,19 @@
     &lt;script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"&gt;&lt;/script&gt;
     &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"&gt;&lt;/script&gt;
                       </code></pre>
-            </div>
+        </div>
 
-            Eine vollständige, minimale Startvorlage folgt hinter diesem Button:
-            <div class="template-example">
-                <p>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTemplate"
-                        aria-expanded="false" aria-controls="collapseTemplate">
-                        Quellcode anzeigen
-                    </button>
-                </p>
-                <div class="collapse" id="collapseTemplate">
-                    <div class="card card-body">
-                        <pre><code class="language-html">&lt;!doctype html&gt;
+        Eine vollständige, minimale Startvorlage folgt hinter diesem Button:
+        <div class="template-example">
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTemplate"
+                    aria-expanded="false" aria-controls="collapseTemplate">
+                    Quellcode anzeigen
+                </button>
+            </p>
+            <div class="collapse" id="collapseTemplate">
+                <div class="card card-body">
+                    <pre><code class="language-html">&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
   &lt;head&gt;
     &lt;!-- Required meta tags --&gt;
@@ -185,78 +200,91 @@
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                    </div>
                 </div>
             </div>
+        </div>
 
-            <h2 id="functions">Funktionen</h2>
-            <p>
-                Zunächst werden die Hauptfunktionen des Frameworks vorgestellt.
-                Dabei wird im Kapitel Layout erst das zugrundeliegende Grid-System erklärt. Anschließend folgen Beispiele, wie die Typographie modifiziert und Bilder eingebunden werden können. Schließlich wird eine Auswahl der im Framework mitgelieferten Komponenten gezeigt.
-            </p>
-            <h3 id="layout">Layout</h3>
-            <h4 id="container">Container</h4>
-            <p>
-                <code>container</code> sind die Grundbausteine für Layouts in Bootstrap. In Containern können Inhalte
-            eingesetzt, gepolstert (<em>padding</em>>) und ausgerichtet werden. Dabei kann entweder die maximale Breite in Pixeln festgelegt
-            werden, durch Verwendung von <code>.container-fluid</code> stets die maximale Bildschirmbreite verwendet werden, oder aber auch dynamische Skalierungen basierend
+        <h2 id="functions">Funktionen</h2>
+        <p>
+            Zunächst werden die Hauptfunktionen des Frameworks vorgestellt.
+            Dabei wird im Kapitel Layout erst das zugrundeliegende Grid-System erklärt. Anschließend folgen Beispiele,
+            wie die aus HTML bekannten Elemente erweitert wurden, um Typographie zu modifizieren und Bilder einzubinden. Schließlich wird eine Auswahl der im
+            Framework mitgelieferten Komponenten gezeigt.
+        </p>
+        <h3 id="layout">Layout</h3>
+        <h4 id="container">Container</h4>
+        <p>
+            <code>container</code> sind die Grundbausteine für Layouts in Bootstrap. In Containern können Inhalte
+            eingesetzt, gepolstert <em>(padding)</em> und ausgerichtet werden. Dabei kann entweder die maximale Breite
+            in Pixeln festgelegt
+            werden, durch Verwendung von <code>.container-fluid</code> stets die maximale Bildschirmbreite verwendet
+            werden, oder aber auch dynamische Skalierungen basierend
             auf <em>Breakpoints</em> verwendet werden.
-            </p>
-            <p>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">Media queries</a> sind Anfragen an das Endgerät, mit welchen beispielsweise die Bildschirmgröße, Orientierung oder Eingabemöglichkeiten (wie <em>"hovering"</em> mit der Maus) abgefragt werden können.
-                Bootstrap verwendet media queries um die Bildschirmbreite abzufragen, die es dann in die Klassen von XS bis XL einteilt. Mithilfe dieser Breakpoints lässt sich die maximale Breite von Komponenten dynamisch festlegen.
-            </p>
-            <h4 id="grid">Grid-System</h4>
-            <p>Bootstrap untergliedert die Bildschirmfläche in ein Gitter mit bis zu 12 Spalten, welches automatisch anhand der
-            Viewportgröße skaliert wird und auf <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">flexbox</a> basiert.
+        </p>
+        <p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">Media
+                queries</a> sind Anfragen an das Endgerät, mit welchen beispielsweise die Bildschirmgröße, Orientierung
+            oder Eingabemöglichkeiten (wie <em>"hovering"</em> mit der Maus) abgefragt werden können.
+            Bootstrap verwendet media queries um die Bildschirmbreite abzufragen, die es dann in die Klassen von XS bis
+            XL einteilt. Mithilfe dieser Breakpoints lässt sich die maximale Breite von Komponenten dynamisch festlegen.
+        </p>
+        <h4 id="grid">Grid-System</h4>
+        <p>Bootstrap untergliedert die Bildschirmfläche in ein Gitter mit bis zu 12 Spalten, welches automatisch anhand
+            der
+            Viewportgröße skaliert wird und auf <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">flexbox</a>
+            basiert.
             Der Entwickler kann dabei zwischen 5 verschiedenen Spaltengrößen von "extra small" bis "extra large"
-            wählen. Ohne zusätzliche Breitenangabe wird die Breite des Containers gleichmäßig auf die Anzahl an Spalten verteilt. Wird nur die Breite einer Spalte festgelegt, so passen sich die verbleibenden Spalten automatisch an. </p>
-            <p>Durch das Responsive Design werden die Spalten bei einem Smartphone mit schmalen Bildschirm automatisch horizontal
+            wählen. Ohne zusätzliche Breitenangabe wird die Breite des Containers gleichmäßig auf die Anzahl an Spalten
+            verteilt. Wird nur die Breite einer Spalte festgelegt, so passen sich die verbleibenden Spalten automatisch
+            an. </p>
+        <p>Durch das Responsive Design werden die Spalten bei einem Smartphone mit schmalen Bildschirm automatisch
+            horizontal
             untereinander angezeigt.</p>
-            <div class="container mt-3">
-                <!--Row with two equal columns-->
-                Zeile mit gleich großen Spalten:
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="demo-content">.col-md-6</div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="demo-content bg-alt">.col-md-6</div>
-                    </div>
+        <div class="container mt-3">
+            <!--Row with two equal columns-->
+            Zeile mit gleich großen Spalten:
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="demo-content">.col-md-6</div>
                 </div>
-
-                <!--Row with two columns divided in 1:2 ratio-->
-                Zeile mit Spalten im Verhältnis 1:2:
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="demo-content">.col-md-4</div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="demo-content bg-alt">.col-md-8</div>
-                    </div>
-                </div>
-
-                <!--Row with two columns divided in 1:3 ratio-->
-                Zeile mit Spalten im Verhältnis 1:3:
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="demo-content">.col-md-3</div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="demo-content bg-alt">.col-md-9</div>
-                    </div>
+                <div class="col-md-6">
+                    <div class="demo-content bg-alt">.col-md-6</div>
                 </div>
             </div>
-            <div class="container-example">
-                <p>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse"
-                        data-target="#collapseContainer" aria-expanded="false" aria-controls="collapseContainer">
-                        Quellcode anzeigen
-                    </button>
-                </p>
-                <div class="collapse" id="collapseContainer">
-                    <div class="card card-body">
-                        <pre><code class="language-html">
+
+            <!--Row with two columns divided in 1:2 ratio-->
+            Zeile mit Spalten im Verhältnis 1:2:
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="demo-content">.col-md-4</div>
+                </div>
+                <div class="col-md-8">
+                    <div class="demo-content bg-alt">.col-md-8</div>
+                </div>
+            </div>
+
+            <!--Row with two columns divided in 1:3 ratio-->
+            Zeile mit Spalten im Verhältnis 1:3:
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="demo-content">.col-md-3</div>
+                </div>
+                <div class="col-md-9">
+                    <div class="demo-content bg-alt">.col-md-9</div>
+                </div>
+            </div>
+        </div>
+        <div class="container-example">
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseContainer"
+                    aria-expanded="false" aria-controls="collapseContainer">
+                    Quellcode anzeigen
+                </button>
+            </p>
+            <div class="collapse" id="collapseContainer">
+                <div class="card card-body">
+                    <pre><code class="language-html">
 &lt;div class="container mt-3"&gt;
         Zeile mit gleich großen Spalten:
         &lt;div class="row"&gt;
@@ -288,138 +316,156 @@
             &lt;/div&gt;
         &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
-            <p>
-                Möchte man die Anzeige seiner Website in verschiedenen Geräten manuell steuern, kann dies über dass
-                <code>class</code>-Attribut modifiziert werden. So kann beispielsweise spezifisch für einen
-                mittelgroßen
-                Tabletbildschirm eine andere Anzahl an Zeilen definiert werden:
-            </p>
+        </div>
+        <p>
+            Möchte man die Anzeige seiner Website in verschiedenen Geräten manuell steuern, kann dies über dass
+            <code>class</code>-Attribut modifiziert werden. So kann beispielsweise spezifisch für einen
+            mittelgroßen
+            Tabletbildschirm eine andere Anzahl an Zeilen definiert werden:
+        </p>
         <p><code class="language-html">class="col-lg-4 col-md-6 col-xl-3"</code>
-            zeigt am großen Bildschirm 4 Zeilen, bei mittleren 6 und bei sehr großen Bildschirmen 3 Zeilen. Die Anzahl an
+            zeigt am großen Bildschirm 4 Zeilen, bei mittleren 6 und bei sehr großen Bildschirmen 3 Zeilen. Die Anzahl
+            an
             Spalten wird dann basierend auf der gesamten Zellenzahl angepasst.
         </p>
-            <p>
-                Die Gitterspalten können auch ineinander verschachtelt werden.
-                Der Parameter <code>offset</code> ermöglicht - wieder spezifisch zur Viewportgröße - einen Versatz der Spalten
-                zu beschreiben. Mit zahlreichen weiteren Parametern lassen sich zudem auch die Ausrichtung der einzelnen Spalten im Dokument, deren Sortierung, und vieles weiteres modifizieren.
-            </p>
-            <h3>Utilities</h3>
-            <p>
-                Kurz beschreiben: Viele Möglichkeiten zur Anpassung, z.B. Borders, floats, shadows, spacing, text, etc.
-            </p>
-            <h3 id="content">Content</h3>
-            <h4>Typographie</h4>
-            <p class="lead">Bootstrap erweitert die in HTML enthaltenen Textformatierungsfunktionen. Dieser Absatz wurde beispielsweise durch Verwendung der Klasse <code>class="lead"</code> hervorgehoben.</p>
-            <p>
-                So kann mittels der <code>display</code>-Klasse eine größere, aber schmalere Überschrift definiert
-                werden, dazu sei auf den <a href="#title">Titel</a> dieses Dokuments verwiesen. Fügt man innerhalb der <code>h*</code>-Headlines ein <code>&lt;small&gt;</code>-Element ein, kann man eine kleinere Unterüberschrift erstellen, wie <a href='#comparison'>hier</a> zu sehen.
-            </p>
-            <p>Absätze können zudem</p>
-            <p class="text-left">links (<code>class="text-left"</code>) </p>
-            <p class="text-center">mittig (<code>class="text-center"</code>), </p>
-            <p class="text-right">rechts (<code>class="text-right"</code>), </p>
-            <p class="text-justify">oder mittels Blocksatz (benötigt etwas mehr inhaltslosen Text um die Wirkung zu
-                sehen, am Besten einfach das Fenter verkleinern) (<code>class="text-justify"</code>) </p>
-            <p>ausgerichtet werden. Auch diese Formatierung kann für alle Viewportgrößen spezifisch definiert werden. </p>
-            <p class="text-lg-right"> So ist dieser Text beispielsweise nur bei großen bis sehr großen Bildschirmen rechtsbündig.</p>
-            <br>
-            <h4>Code</h4>
-            <p>
-                Mithilfe des <code>&lt;code&gt;</code>-Befehls, lassen sich Quellcode-Wörter hervorheben. Kombiniert man dies mit dem HTML-Befehl <code>&lt;pre&gt;</code>, welcher einen vorformatierten Textblock repräsentiert, so wird der Code statt inline als eigener Absatz ausgestellt.
-            </p>
-            <h4>Zitate</h4>
-            Ein <code>blockquote</code>-Element erlaubt das Einbetten von Zitaten in den Text:
-            <blockquote class="blockquote text-center">
-                <p class="mb-0">You can also give pretty look to your blockquotes — Just define the blockquotes
-                    using the standard &lt;blockquote&gt; element and bootstrap's style sheet will do the rest.</p>
-                <footer class="blockquote-footer">by <cite>TutorialRepublic</cite></footer>
-            </blockquote>
-            <!-- <h4>Bilder</h4> -->
-            <!-- <h4>Tabellen</h4> -->
-            <h4>Abbildungen</h4>
-            <p>
-                Mittels der Klasse <code>figure</code> lassen sich Bilder mit Text, üblicherweise der Bildunterschrift, gemeinsam ausrichten.
-                Bilder werden dabei über <code>img</code> eingebunden. Durch Verwendung der Klasse <code>img-fluid</code> erhält man responsive Bilder, deren Breite sich an der Viewportgröße orientiert und das Bild automatisch korrekt skaliert.
-                Eine Bildunterschrift wird mit <code>figcaption</code> und der Klasse <code>figure-caption</code>, optional mit Ausrichtung, angefügt.
-            </p>
-            <div class="row justify-content-center">
+        <p>
+            Die Gitterspalten können auch ineinander verschachtelt werden.
+            Der Parameter <code>offset</code> ermöglicht - wieder spezifisch zur Viewportgröße - einen Versatz der
+            Spalten
+            zu beschreiben. Mit zahlreichen weiteren Parametern lassen sich zudem auch die Ausrichtung der einzelnen
+            Spalten im Dokument, deren Sortierung, und vieles weiteres modifizieren.
+        </p>
+        <h3 id="content">Inhalt</h3>
+        <h4>Typographie</h4>
+        <p class="lead">Bootstrap erweitert die in HTML enthaltenen Textformatierungsfunktionen. Dieser Absatz wurde
+            beispielsweise durch Verwendung der Klasse <code>class="lead"</code> hervorgehoben.</p>
+        <p>
+            Mittels der <code>display</code>-Klasse kann eine größere, aber schmalere Überschrift definiert
+            werden, dazu sei auf den <a href="#title">Titel</a> dieses Dokuments verwiesen. Fügt man innerhalb der
+            <code>h*</code>-Headlines ein <code>&lt;small&gt;</code>-Element ein, kann man eine kleinere
+            Unterüberschrift erstellen, wie <a href='#comparison'>im nächsten Kapitel</a> zu sehen.
+        </p>
+        <p>Absätze können zudem</p>
+        <p class="text-left">links (<code>class="text-left"</code>) </p>
+        <p class="text-center">mittig (<code>class="text-center"</code>), </p>
+        <p class="text-right">rechts (<code>class="text-right"</code>), </p>
+        <p class="text-justify">oder mittels Blocksatz (benötigt etwas mehr inhaltslosen Text um die Wirkung zu
+            sehen, am Besten einfach das Fenter verkleinern) (<code>class="text-justify"</code>) </p>
+        <p>ausgerichtet werden. Auch diese Formatierung kann für alle Viewportgrößen spezifisch definiert werden. </p>
+        <p class="text-lg-right"> So ist dieser Text beispielsweise nur bei großen bis sehr großen Bildschirmen
+            rechtsbündig.</p>
+        <br>
+        <h4>Code</h4>
+        <p>
+            Mithilfe des <code>&lt;code&gt;</code>-Befehls, lassen sich Quellcode-Wörter hervorheben. Kombiniert man
+            dies mit dem HTML-Befehl <code>&lt;pre&gt;</code>, welcher einen vorformatierten Textblock repräsentiert, so
+            wird der Code statt inline als eigener Absatz ausgestellt.
+        </p>
+        <h4>Zitate</h4>
+        Ein <code>blockquote</code>-Element erlaubt das Einbetten von Zitaten in den Text:
+        <blockquote class="blockquote text-center">
+            <p class="mb-0">You can also give pretty look to your blockquotes — Just define the blockquotes
+                using the standard &lt;blockquote&gt; element and bootstrap's style sheet will do the rest.</p>
+            <footer class="blockquote-footer">by <cite>TutorialRepublic</cite></footer>
+        </blockquote>
+        <!-- <h4>Bilder</h4> -->
+        <!-- <h4>Tabellen</h4> -->
+        <h4>Abbildungen</h4>
+        <p>
+            Mittels der Klasse <code>figure</code> lassen sich Bilder mit Text, üblicherweise der Bildunterschrift,
+            gemeinsam ausrichten.
+            Bilder werden dabei über <code>img</code> eingebunden. Durch Verwendung der Klasse <code>img-fluid</code>
+            erhält man responsive Bilder, deren Breite sich an der Viewportgröße orientiert und das Bild automatisch
+            korrekt skaliert.
+            Eine Bildunterschrift wird mit <code>figcaption</code> und der Klasse <code>figure-caption</code>, optional
+            mit Ausrichtung, angefügt.
+        </p>
+        <div class="row justify-content-center">
             <figure class="figure">
-                <img src="https://getbootstrap.com/docs/4.5/assets/img/bootstrap-icons.png" class="figure-img img-fluid rounded" alt="...">
-                <figcaption class="figure-caption text-right">Eine Bildunterschrift unter dem Bild, rechtsbündig.</figcaption>
-              </figure>
-            </div>
-            <div class="template-example">
-                <p>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTemplate"
-                        aria-expanded="false" aria-controls="collapseTemplate">
-                        Quellcode anzeigen
-                    </button>
-                </p>
-                <div class="collapse" id="collapseTemplate">
-                    <div class="card card-body">
-                        <pre><code class="language-html">&lt;div class="row justify-content-center"&gt;
+                <img src="https://getbootstrap.com/docs/4.5/assets/img/bootstrap-icons.png"
+                    class="figure-img img-fluid rounded" alt="...">
+                <figcaption class="figure-caption text-right">Eine Bildunterschrift unter dem Bild, rechtsbündig.
+                </figcaption>
+            </figure>
+        </div>
+        <div class="template-example">
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTemplate"
+                    aria-expanded="false" aria-controls="collapseTemplate">
+                    Quellcode anzeigen
+                </button>
+            </p>
+            <div class="collapse" id="collapseTemplate">
+                <div class="card card-body">
+                    <pre><code class="language-html">&lt;div class="row justify-content-center"&gt;
     &lt;figure class="figure"&gt;
         &lt;img src="https://getbootstrap.com/docs/4.5/assets/img/bootstrap-icons.png" class="figure-img img-fluid rounded" alt="..."&gt;
         &lt;figcaption class="figure-caption text-right"&gt;Eine Bildunterschrift unter dem Bild, rechtsbündig.&lt;/figcaption&gt;
     &lt;/figure&gt;
 &lt;/div&gt;</code></pre>
-                    </div>
                 </div>
             </div>
-            <h3 id="components">Komponenten</h3>
-            Im folgenden Abschnitt werden einige der im Framework enthaltenen Komponenten, welche in dieser Webseite verwendet wurden, kurz vorgestellt. Dies ist nur eine kleine Auswahl aller Komponenten, Bootstrap bietet über 20 Stück mit zahlreichen Varianten.
-            <h4 id="forms">List Groups</h4>
-            <p>
-                List Groups führen die Darstellung von Listen in eine zeitgemäßere Optik über. So werden die Listenelemente in Boxen dargestellt, welche zudem deaktiviert, eingefärbt oder in Buttons verwandelt werden können. So wird die Funktionalität einfacher Aufzählungen deutlich erweitert. Dazu muss nur das HTML-Element für eine unnummerierte Liste <code>ul</code> um die Klasse <code>list-group</code>, und die Listenelemente <code>li</code> um die Klasse <code>list-group-item</code> erweitert werden. Auch eine horizontale Darstellung ist möglich. Das folgende Beispiel kombiniert einige der Möglichkeiten.
-            </p>
-            <div class="row justify-content-center">
-                <div class="col-7">
-            <ul class="list-group list-group-horizontal">
-                <a href="#title" class="list-group-item list-group-item-action">Springe zum Titel des Dokuments</a>
-                <li class="list-group-item">Normales Listenelement</li>
-                <li class="list-group-item list-group-item-danger">Eine Gefahrenmeldung</li>
-            </ul>
         </div>
+        <h3 id="components">Komponenten</h3>
+        Im folgenden Abschnitt werden einige der im Framework enthaltenen Komponenten, welche in dieser Webseite
+        verwendet wurden, kurz vorgestellt. Dies ist nur eine kleine Auswahl aller Komponenten, Bootstrap bietet über 20
+        Stück mit zahlreichen Varianten.
+        <h4 id="forms">List Groups</h4>
+        <p>
+            List Groups führen die Darstellung von Listen in eine zeitgemäßere Optik über. So werden die Listenelemente
+            in Boxen dargestellt, welche zudem deaktiviert, eingefärbt oder in Buttons verwandelt werden können. Dadurch wird
+            die Funktionalität einfacher Aufzählungen deutlich erweitert. Dazu muss nur das HTML-Element für eine
+            unnummerierte Liste <code>ul</code> um die Klasse <code>list-group</code>, und die Listenelemente
+            <code>li</code> um die Klasse <code>list-group-item</code> erweitert werden. Auch eine horizontale
+            Darstellung ist möglich. Das folgende Beispiel kombiniert einige der Möglichkeiten.
+        </p>
+        <div class="row justify-content-center">
+            <div class="col-7">
+                <ul class="list-group list-group-horizontal">
+                    <a href="#title" class="list-group-item list-group-item-action">Springe zum Titel des Dokuments</a>
+                    <li class="list-group-item">Normales Listenelement</li>
+                    <li class="list-group-item list-group-item-danger">Eine Gefahrenmeldung</li>
+                </ul>
+            </div>
         </div>
-            <h4 id="forms">Forms</h4>
+        <h4 id="forms">Forms</h4>
+        <p>
+            Während Formulare auch mittels HTML und CSS manuell erstellt werden können, vereinfacht das Framework
+            dies deutlich. Ein Formular ist so nur wenige Zeilen Code entfernt, wie das folgende Login-Formular zeigt:
+        </p>
+
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">E-Mail-Adresse</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="E-Mail-Adresse eingeben">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Passwort</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Passwort">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Eingeloggt bleiben</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Anmelden</button>
+        </form>
+
+        <p></p>
+        <div class="form-example">
             <p>
-                Während Formulare auch mittels HTML und CSS manuell erstellt werden können, vereinfacht das Framework
-                dies deutlich. Ein Formular ist so nur wenige Zeilen Code entfernt, wie das folgende Login-Formular zeigt:
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseForm"
+                    aria-expanded="false" aria-controls="collapseForm">
+                    Quellcode anzeigen
+                </button>
             </p>
-            
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">E-Mail-Adresse</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="E-Mail-Adresse eingeben">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                        else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Passwort</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Passwort">
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Eingeloggt bleiben</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Anmelden</button>
-            </form>
-      
-            <p></p>
-            <div class="form-example">
-                <p>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseForm"
-                        aria-expanded="false" aria-controls="collapseForm">
-                        Quellcode anzeigen
-                    </button>
-                </p>
-                <div class="collapse" id="collapseForm">
-                    <div class="card card-body">
-                        <pre><code class="language-html">&lt;form&gt;
+            <div class="collapse" id="collapseForm">
+                <div class="card card-body">
+                    <pre><code class="language-html">&lt;form&gt;
     &lt;div class="form-group"&gt;
         &lt;label for="exampleInputEmail1"&gt;E-Mail-Adresse&lt;/label&gt;
         &lt;input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail-Adresse eingeben"&gt;
@@ -436,214 +482,353 @@
     &lt;button type="submit" class="btn btn-primary"&gt;Anmelden&lt;/button&gt;
 &lt;/form&gt;
                                 </code></pre>
-                    </div>
                 </div>
             </div>
-            <h4>Jumbotron</h4>
-            <p>
-                Jumbotrons werden eingesetzt, um dem Nutzer sofort deutlich hervorstechende, wichtige Aussagen mitzuteilen. Diese werden besonders in der Einleitung von Webseiten benutzt, um das Interesse beim Besucher zu wecken und wichtige Marketingphrasen darzustellen.
-                Auch in diesem Dokument ist es als "Eye-Catcher" am <a href="#jumbotron">Beginn der Website</a> eingesetzt.
-            </p>
-            <h4>Navbar</h4>
-            <p>Die Navigationsleiste wird am oberen Bildschirmrand dargestellt. Sie dient zur schnellen Navigation zwischen den einzelnen Bereichen einer Webseite. In diesem Fall wurden nur auf die Kapitel dieses Dokuments verwiesen, üblicherweise werden dort aber alle Unterseiten einer Webseite verlinkt.</p>
-            <p>Navbar liefert einige Unterkomponenten mit, u.a. folgende:</p>
+        </div>
+        <h4>Jumbotron</h4>
+        <p>
+            Jumbotrons werden eingesetzt, um dem Nutzer sofort deutlich hervorstechende, wichtige Aussagen mitzuteilen.
+            Diese werden besonders in der Einleitung von Webseiten benutzt, um das Interesse beim Besucher zu wecken und
+            wichtige Marketingphrasen darzustellen.
+            Auch in diesem Dokument ist es als "Eye-Catcher" am <a href="#jumbotron">Beginn der Website</a> eingesetzt.
+        </p>
+        <h4>Navbar</h4>
+        <p>Die Navigationsleiste wird am oberen Bildschirmrand dargestellt. Sie dient zur schnellen Navigation zwischen
+            den einzelnen Bereichen einer Webseite. In diesem Fall wurden nur auf die Kapitel dieses Dokuments
+            verwiesen, üblicherweise werden dort aber alle Unterseiten einer Webseite verlinkt.</p>
+        <p>Navbar liefert einige Unterkomponenten mit, u.a. folgende:</p>
+        <ul>
+            <li> <code>.navbar-brand</code> um die Marke oder Firma hervorzuheben</li>
+            <li> <code>.navbar-nav</code> zur Navigation innerhalb der Webseite, mit
+                Unterstützung für Dropdown-Felder</li>
+            <li> <code>.form-inline</code> für eingebettete Formulare, wie Suchfelder</li>
+            <li> <code>.nav-item</code> für grundlegende Textbausteine im Header.</li>
+        </ul>
+        <p>
+            Je nach Hintergrundfarbe der Webseite, kann <code>.navbar-light</code> oder <code>.navbar-dark</code> als
+            helles bzw. dunkles Farbschema für die Navigationsleiste genutzt werden.
+        </p>
+        <h4>Collapse</h4>
+        <p>Mit der Collapse-Komponente lassen sich einklappbare Elemente definieren. Sie werden in diesem Dokument bei
+            allen "Quellcode anzeigen" Buttons verwendet. Dabei werden die zu klappenden
+            <code>&lt;div&gt;</code>-Elemente der Klasse <code>class="collapse"</code> zugewiesen. Zum Klappen muss
+            keine JavaScript-Methode erzeugt werden, sondern man gibt einem Link oder Button die Funktion
+            <em>collapse</em> als Parameter für <code>data-toggle</code> mit. Im <code>data-target</code> wird nun noch
+            die ID des ein- und auszuklappenden Zielobjekts angegeben, und schon ist man fertig.</p>
+        <p>Es können auch mehrere Objekte gleichzeitig geklappt werden, indem man als Target den JQuery-Selector angibt.
+        </p>
+        <p>Mehrere Bausteine können wie ein Akkordion nacheinander aufgeklappt werden, indem man in jedem der zu
+            klappenden Bereiche das gemeinsame Elternattribut <code>data-parent</code> setzt.</p>
+        <h4>Card</h4>
+        <p>Karten sind Container, welche aufgrund der hohen Flexibilität sehr häufig eingesetzt werden. Das
+            Designelement der Karte ist besonders von Google's Material Design bekannt.</p>
+        <p>In dieser Webseite wurden sie beispielsweise für die <a href="#contact-card">Kontaktkarte</a> verwendet.</p>
+
+        <h3>Werkzeuge</h3>
+        <p>
+            Neben den Komponenten liefert das Framework zudem einige Werkzeuge zum Individualisieren des
+            Webseitendesigns mit.
+        </p>
+        <p>
+            So können beispielsweise Container mit Rändern oder Schattierungen umgeben werden,
+            Vordefinierte Farbklassen (<span class="text-primary">primary</span>, <span class="text-secondary">secondary</span>, <span class="text-success">success</span>, <span class="text-danger">danger</span>,  etc.) führen die Aufmerksamkeit des
+            Besuchers.
+        </p>
+        <p>
+            Zudem Klassen zur Skalierung von Objekten, wie eine Festlegung auf halbe Breite <code>class="w-50"</code>,
+            zu deren Positionierung (z.B. <code>class="fixed-top"</code>) oder Ausrichtung (z.B.
+            <code>class="align-bottom"</code>).
+        </p>
+        <h2 id="comparison">Vergleich zu anderen Frameworks
+            <small class='text-muted'>Was Bootstrap kann - und was nicht</small>
+        </h2>
+        <p>
+            Bei Bootstrap handelt es sich um ein reines Frontend-Framework zur schnellen Erstellung von
+            Benutzeroberflächen mittels vorgefertigter Komponenten. Mithilfe eines intuitiven Gittersystems können
+            responsive Webseiten erstellt werden.
+        </p>
+        <p>
+            Ein großer Vorteil bei der Verwendung von Bootstrap liegt in der Zeitersparnis im Vergleich zur händischen
+            Erstellung von CSS-Stylesheets. Außerdem bietet das Framework Cross-Platform-Unterstützung, wodurch man sich
+            keine Sorgen machen muss, ob die entwickelte Webseite auf dem Androidmobiltelefon genauso gut aussieht, wie
+            in einer Safari-Instanz auf einem Mac-Rechner. Auch liefert es eine konsistente UI, welche <em>"out of the
+                box"</em>, ohne Modifikation, gut aussieht. Durch die <em>mobile first</em>-Philosophie wird eine
+            angenehme Benutzererfahrung für mobile Nutzer sichergestellt, welche mit bereits über 50% des weltweit
+            erzeugten
+            Traffics einen immer größer werdenden Teil aller Internetnutzer darstellen.
+        </p>
+        <br>
+        <p>
+            Die Verwendung des Frameworks zieht aber natürlich auch Nachteile mit sich.
+        </p>
+        <p> Da das Framework sehr populär ist, sollte eine starke Personalisierung der verwendeten Komponenten erfolgen,
+            um sich von dem <em>"Einheitsbrei"</em> anderer Webseiten abzuheben.
+            So müssen möglicherweise sehr viele Styles überschrieben werden.
+        </p>
+        <p>
+            Die Bindung an jQuery zur Verwendung von JavaScript wird von einigen Webentwicklern als Negativpunkt
+            empfunden.
+        </p>
+        <p>
+            Das volle Framework kann zu schwer (im Sinne der Dateigröße) und langsam sein, weil meist nur ein kleiner
+            Prozentteil der Komponenten verwendet wird. Daher ist ein "cherry-picking" der genutzten Komponenten und die
+            eigene Kompilierung einer modifizierten Bootstrapvariante zu empfehlen.
+        </p>
+        <br>
+        <p>
+            Bootstrap ist <em>kein</em> Full-Stack-Framework, bietet also keinerlei Werkzeuge zur Lösung von
+            Backendproblemstellungen.
+            Es sollte also nur mit anderen Frontend-Frameworks verglichen werden.
+        </p>
+        <h3>Django</h3>
+        <div class="row">
+            <div class="col-9">
+                <p>
+                    Wie bereits erwähnt lässt sich Bootstrap nicht wirklich mit Django vergleichen, da diese deutlich
+                    unterschiedliche Einsatzzwecke bedienen.
+                </p>
+                <p>
+                    Während das in Python geschriebene Django ein Full-Stack-Framework ist, beschäftigt sich Bootstrap
+                    mit
+                    seiner Kombination aus CSS und JavaScript ausschließlich mit dem Frontend einer Webseite, also der
+                    dem
+                    Nutzer präsentierten Oberfläche. Bootstrap kann hingegen <em>mit</em> Django verwendet werden.
+                </p>
+                <p>
+                    Django verwendet die <em>Model-View-Controller</em>-Architektur, unterteilt alle Aufgaben einer
+                    Webseite
+                    also in drei Aufgabengebiete. Bootstrap kann in diesem Modell für den <em>View</em>-Teil komplementär
+                    eingesetzt
+                    werden. Dazu werden einfach die Bootstrap-Komponenten in die HTML-Dateien integriert. Zuvor muss
+                    dafür eine
+                    Bootstrapinstallation sichergestellt werden und die nötigen CSS und JavaScript-Dateien geladen
+                    werden, wie
+                    im Setup-Kapitel beschrieben.
+                </p>
+                <p>
+                    Das Paket <a href="https://pypi.org/project/django-bootstrap4/">django-bootstrap4</a> bietet zudem
+                    die
+                    Möglichkeit, mittels Python-Programmcode Bootstrap-spezifische Komponenten zu erzeugen und somit
+                    visuell
+                    ansprechende Templates zu erzeugen. Möchte man Bootstrap nur zur ansprechenderen Darstellung von
+                    Django-Formularen verwenden, bietet sich <a
+                        href="https://pypi.org/project/django-crispy/">django-crispy-forms</a> an.
+                </p>
+            </div>
+            <div class="col text-right">
+                <figure class="figure">
+                    <a href="https://www.djangoproject.com/" target="_blank"><img
+                            src="https://www.fullstackpython.com/img/logos/django.png"
+                            class="figure-img img-fluid rounded" alt="..."></a>
+                    <figcaption class="figure-caption text-right">django - The web framework for perfectionists with
+                        deadlines.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <h3>Semantic UI bzw. Fomantic UI</h3>
+        <div class="row">
+            <div class="col-9">
+                <p>
+                    Auch Semantic UI liefert eine breite Auswahl vordefinierter Komponenten in HTML, CSS und JavaScript.
+                    Das Framework basiert auf Prinzipien der natürlichen Sprache und soll deshalb besonders einfach von
+                    Menschen lesbar und verständlich sein.
+                </p>
+                <p>
+                    Durch die einfachen, auf natürlicher Sprache basierenden Begrifflichkeiten, ist es besonders für
+                    Einsteiger sehr leicht zu verwenden. Objektklassen entstehen so aus einer Kombination von Adjektiven
+                    und Nomen, wie z.B. <code>&lt;div class="ui vertical animated button"&gt;</code>.
+                    Durch die selbsterklärenden Namen ist der Designprozess auch schneller als mit den dutzenden
+                    zunächst kryptischen Klassen von Bootstrap möglich.
+                </p>
+                <p>
+                    Ein weiterer Vorteil von Semantic UI sind die zahlreichen verfügbaren Themes, und die weitreichenden
+                    Individualisierungsmöglichkeiten zur Erstellung eigener Themes durch Anpassung von über 3.000
+                    Variablen.
+                </p>
+                <p>
+                    Nachteil von Semantic UI ist das weniger responsive Design, wodurch die Unterstützung für
+                    unterschiedliche Bildschirmgrößen weniger ausgereift ist, als bei Bootstrap. Bei Semantic UI sind
+                    die Breakpoints für verschiedene Viewportgrößen kein elementarer Bestandteil des Designs wie in
+                    Bootstrap.
+                </p>
+                <p>
+                    Zuletzt sei erwähnt, dass das offizielle Semantic UI-Projekt seit Oktober 2018 "verwaist" ist und
+                    seitdem keine Updates mehr erhielt. Deshalb wurde von der Community ein Fork namens <b>Fomantic
+                        UI</b> entwickelt, indem das Framework weiterentwickelt wird. Dieser soll nach Ansicht der
+                    Entwickler in der Zukunft wieder mit dem ursprünglichen Entwicklungszweig zusammengeführt werden.
+                    Fomantic UI erweitert das ursprüngliche Framework beispielsweise um zahlreiche neue Komponenten wie
+                    einen Kalender, Platzhalter, Slider und Emojis.
+                </p>
+                <p>
+                    Zusammenfassend ist Bootstrap das populärere Framework und es existieren deshalb mehr Ressourcen
+                    online, möchte man ein Design hingegen noch schneller erzeugen und vorallem individualisieren,
+                    sollte man auch einen Blick auf Semantic bzw. Fomantic UI werfen.
+                </p>
+            </div>
+            <div class="col text-right">
+                <figure class="figure">
+                    <a href="https://semantic-ui.com/" target="_blank"><img
+                            src="https://camo.githubusercontent.com/6fe5c87525d14d176569e13c3c8ecbf200d091c6cd670bc3ace88d69479b443d/687474703a2f2f73656d616e7469632d75692e636f6d2f696d616765732f6c6f676f2e706e67"
+                            class="figure-img img-fluid rounded" alt="..."></a>
+                    <figcaption class="figure-caption text-right">Semantic UI is a UI component framework based around
+                        useful principles from natural language.</figcaption>
+                </figure>
+                <figure class="figure">
+                    <a href="https://fomantic-ui.com/" target="_blank"><img
+                            src="https://fomantic-ui.com/images/logo.png" class="figure-img img-fluid rounded"
+                            alt="..."></a>
+                    <figcaption class="figure-caption text-right">Fomantic UI is a community fork of Semantic UI
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <h3>Bulma</h3>
+        <div class="row">
+            <div class="col-9">
+                <p>
+                    Bulma basiert wie Bootstrap 4 auf Flexbox als flexibles Gridsystem zur erstellung responsiver
+                    Webseiten. Im Gegensatz zu Bootstrap verzichtet Bulma jedoch auf JavaScript, das Framework ist also
+                    ein einziges CSS-File.
+                </p>
+                <p>
+                    Wie Bulma selbst <a href="https://bulma.io/alternative-to-bootstrap/">im Vergleich auf ihrer
+                        Webseite</a> schreibt, zeichnet sich das Framework besonders durch das einfach zu verwendende
+                    Grid-System und den verständlichen Syntax aus. Durch den Verzicht auf JavaScript ist es zudem eine
+                    sehr leichtgewichtige Lösung.
+                </p>
+                <p>
+                    Bootstrap bietet im Vergleich dazu hingegen durch die Inklusion von jQuery Plugins mehr
+                    Interaktionsmöglichkeiten, und wie bereits erwähnt durch die hohe Popularität eine größere
+                    Community.
+                </p>
+                <p>
+                    Während Bulma von 2016 noch sehr jung ist, und auch versucht an der "bleeding edge" der
+                    Browsertechnologie zu bleiben, trägt das 5 Jahre ältere Bootstrap möglicherweise mehr Altlasten mit
+                    sich herum, bietet dafür aber beispielsweise auch besseren Support für den Internet Explorer, was je
+                    nach zu erreichender Zielgruppe nicht zu vernachlässigen ist.
+                </p>
+            </div>
+            <div class="col text-right">
+                <figure class="figure">
+                    <a href="https://bulma.io/" target="_blank"><img src="https://bulma.io/images/bulma-banner.png"
+                            class="figure-img img-fluid rounded" alt="..."></a>
+                    <figcaption class="figure-caption text-right">Bulma is a modern CSS framework based on Flexbox.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <h3>Materialize</h3>
+        <div class="row">
+            <div class="col-9">
+                <p>
+                    Android-Benutzern kommt die Designsprache von Materialize CSS sicher bekannt vor, basiert sie doch,
+                    wie der Name bereits vermuten lässt, auf <a href="https://material.io/design">Material Design</a>
+                    von Google. Wie Bootstrap greift Materialize dabei auch auf CSS und JavaScript zurück.
+                </p>
+                <p>
+                    Das Framework ist besonders für Fans des flachen Google Designs interessant, denn Webseiten im
+                    Google-Look lassen sich damit leicht entwerfen. Möchte man besonders Nutzer von
+                    (Android-)Mobiltelefonen mit seiner Webseite erreichen, kann dieses einheitliche und
+                    wiedererkennbare Design von Vorteil sein.
+                </p>
+                <p>
+                    Nachteile von Materialize CSS sind die fehlende Kompatibilität mit älteren Browsern (besonders
+                    Internet Explorer), sowie die vergleichweise kleine Entwicklercommunity, und ist deshalb nur
+                    fortgeschritteneren Webentwicklern zu empfehlen.
+                </p>
+            </div>
+            <div class="col text-right">
+                <figure class="figure">
+                    <a href="https://bulma.io/" target="_blank"><img
+                            src="https://camo.githubusercontent.com/86f17df730ccbbbef991d61bb586bf2d3c165f19cfe334e6e4ba4f97d2dd691a/687474703a2f2f6d6174657269616c697a656373732e636f6d2f7265732f6d6174657269616c697a652e737667"
+                            class="figure-img img-fluid rounded" alt="..."></a>
+                    <figcaption class="figure-caption text-right">Materialize, a CSS Framework based on Material Design
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <p></p>
+        Weitere mögliche CSS-Framework-Alternativen, aufgelistet nach Anzahl der Sterne in GitHub sind Folgende:
+        <div class="col-9">
             <ul class="list-group">
-                <li class="list-group-item"> <code>.navbar-brand</code> um die Marke oder Firma hervorzuheben</li>
-                <li class="list-group-item"> <code>.navbar-nav</code> zur Navigation innerhalb der Webseite, mit Unterstützung für Dropdown-Felder</li>
-                <li class="list-group-item"> <code>.form-inline</code> für eingebettete Formulare, wie Suchfelder</li>
-                <li class="list-group-item"> <code>.nav-item</code> für grundlegende Textbausteine im Header.</li>
+                <a href="https://tailwindcss.com/"
+                    class="list-group-item list-group-item-action  d-flex justify-content-between align-items-center">tailwindcss
+                    <span class="badge badge-primary badge-pill">31.7k</span></a>
+                <a href="https://get.foundation/"
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Foundation
+                    <span class="badge badge-primary badge-pill">28.9k</span></a>
+                <a href="http://purecss.io/"
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Pure.css
+                    <span class="badge badge-primary badge-pill">21.2k</span></a>
             </ul>
-            <p>
-                Je nach Hintergrundfarbe der Webseite, kann <code>.navbar-light</code> oder <code>.navbar-dark</code> als helles bzw. dunkles Farbschema für die Navigationsleiste genutzt werden.
-            </p>
-            <h4>Collapse</h4>
-            <p>Mit der Collapse-Komponente lassen sich einklappbare Elemente definieren. Sie werden in diesem Dokument bei allen "Quellcode anzeigen" Buttons verwendet. Dabei werden die zu klappenden <code>&lt;div&gt;</code>-Elemente der Klasse <code>class="collapse"</code> zugewiesen. Zum Klappen muss keine JavaScript-Methode erzeugt werden, sondern man gibt einem Link oder Button die Funktion <em>collapse</em> als Parameter für <code>data-toggle</code> mit. Im <code>data-target</code> wird nun noch die ID des ein- und auszuklappenden Zielobjekts angegeben, und schon ist man fertig.</p>
-            <p>Es können auch mehrere Objekte gleichzeitig geklappt werden, indem man als Target den JQuery-Selector angibt.</p>
-            <p>Mehrere Bausteine können wie ein Akkordion nacheinander aufgeklappt werden, indem man in jedem der zu klappenden Bereiche das gemeinsame Elternattribut <code>data-parent</code> setzt.</p>
-            <h4>Carousel</h4>
-            <h4>Card</h4>
-            <p>Karten sind Container, welche aufgrund der hohen Flexibilität sehr häufig eingesetzt werden.</p>
-            <p>In dieser Webseite wurden sie beispielsweise für die <a href="#contact-card">Kontaktkarte</a> verwendet.</p>
+        </div>
+        <h2 id="conclusion">Fazit</h2>
+        <p>
+            Bootstrap eignet sich sehr gut für den Einstieg in die Web-Frontend-Entwicklung, sowie für die schnelle
+            Erstellung einfacher Webseiten. Die zahlreichen vorgefertigten Bausteine ermöglichen einen vereinfachten
+            Entwicklungsprozess, wodurch besonders prototypische Webseiten sehr schnell umgesetzt werden können. Durch
+            die große Popularität des Frameworks existiert zudem eine große Entwicklercommunity die beim Einstieg und
+            weit darüber hinaus behilflich sein kann.
+        </p>
+        <p>
+            Wird hingegen eine sehr einzigartige Webseite benötigt, muss ein großer Aufwand in die Modifikation der
+            einzelnen
+            Komponenten investiert werden, um sich von anderen mittels Bootstrap entwickelten Webseiten abzusetzen. Auch
+            der etwas kompliziertere Syntax mit den unzähligen Klassen kann für Anfänger überwältigend sein, Bulma und
+            Fomantic UI sind im Vergleich leichter lesbar.
+        </p>
+        <p>
+            Wie immer gilt es also bei der Auswahl des Frameworks, das richtige Werkzeug für das gegebene Projekt zu
+            wählen. Bootstrap ist dabei sicherlich oft eine gute Wahl.
+        </p>
 
-            <h2 id="comparison">Vergleich zu anderen Frameworks
-                <small class='text-muted'>Was Bootstrap kann - und was nicht</small>
-            </h2>
-            <p>
-                Bei Bootstrap handelt es sich um ein reines Frontend-Framework zur schnellen Erstellung von
-                Benutzeroberflächen mittels vorgefertigter Komponenten. Mithilfe eines intuitiven Gittersystems können
-                responsive Webseiten erstellt werden.
-            </p>
-            <p>
-                Ein großer Vorteil bei der Verwendung von Bootstrap liegt in der Zeitersparnis im Vergleich zur händischen
-                Erstellung von CSS-Stylesheets. Außerdem bietet das Framework Cross-Platform-Unterstützung, wodurch man sich
-                keine Sorgen machen muss, ob die entwickelte Webseite auf dem Androidmobiltelefon genauso gut aussieht, wie
-                in einer Safari-Instanz auf einem Mac-Rechner. Auch liefert es eine konsistente UI, welche <em>"out of the
-                    box"</em>, ohne Modifikation, gut aussieht. Durch die <em>mobile first</em>-Philosophie wird eine
-                angenehme Benutzererfahrung für mobile Nutzer sichergestellt, welche mit bereits über 50% allen erzeugten
-                Traffics einen immer größer werdenden Teil aller Internetnutzer darstellen.
-            </p>
-            <br>
-            <p>
-                Die Verwendung des Frameworks zieht natürlich auch Nachteile mit sich.
-            </p>
-            <p> Da das Framework sehr populär ist, sollte eine starke Personalisierung der verwendeten Komponenten erfolgen,
-                um sich von dem <em>"Einheitsbrei"</em> anderer Webseiten abzuheben.
-                So müssen möglicherweise sehr viele Styles überschrieben werden.
-            </p>
-            <p>
-                Dass Bindung an jQuery zur Verwendung von JavaScript wird von einigen Webentwicklern als Negativpunkt
-                empfunden.
-            </p>
-            <p>
-                Das volle Framework kann zu schwer (im Sinne der Dateigröße) und langsam sein, weil meist nur ein kleiner
-                Prozentteil der Komponenten verwendet wird. Daher ist ein "cherry-picking" der genutzten Komponenten und die
-                eigene Kompilierung einer modifizierten Bootstrapvariante zu empfehlen.
-            </p>
-            <br>
-            <p>
-                Bootstrap ist <em>kein</em> Full-Stack-Framework, bietet also keinerlei Werkzeuge zur Lösung von
-                Backendproblemstellungen.
-                Es sollte also mit anderen Frontend-Frameworks, wie ... verglichen werden.
-            </p>
-            <!-- <div class="container-md">
-            <div id="carousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel" data-slide-to="1"></li>
-                  <li data-target="#carousel" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="https://getbootstrap.com/docs/4.5/assets/img/bootstrap-icons@2x.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Bootstrap</h5>
-                      <p>The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://blog.eddy-dev.net/img/byesemantic/semantic.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Semantic-UI</h5>
-                      <p>Semantic is a UI component framework based around useful principles from natural language.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://raw.githubusercontent.com/jgthms/bulma/master/docs/images/bulma-banner.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Bulma</h5>
-                      <p>Modern CSS framework based on Flexbox.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://miro.medium.com/max/1400/0*UA9Vw7uKPy1MFcwz.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>MaterializeCSS</h5>
-                      <p>Materialize, a CSS Framework based on Material Design</p>
-                    </div>
-                  </div>
+        <h2 id="sources">Quellen</h2>
+        <ul class="list-group list-group-flush">
+            <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/"
+                class="list-group-item list-group-item-action">Codebeispiele: Bootstrap Tutorial (TutorialRepublic)</a>
+            <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/"
+                class="list-group-item list-group-item-action">Codebeispiele: Introduction Bootstrap v.4.5 (Offizielle
+                Dokumentation)</a>
+            <a href="https://bootstrapcreative.com/pros-cons-using-bootstrap-web-development/"
+                class="list-group-item list-group-item-action">What Are the Pros and Cons of Using Bootstrap in Web
+                Development? (BootstrapCreative)</a>
+            <a href="https://t3n.de/news/css-frameworks-vergleich-2-756574/"
+                class="list-group-item list-group-item-action">8 CSS-Frameworks im Vergleich (t3n)</a>
+            <a href="https://developerz.software/2020/03/29/semantic-ui-or-bootstrap-discover-the-pros-and-cons-of-each-framework/"
+                class="list-group-item list-group-item-action">Semantic UI or Bootstrap? Discover the pros and cons of
+                each framework (Developerz)</a>
+            <a href="https://t3n.de/news/bulma-flexbox-framework-735670/"
+                class="list-group-item list-group-item-action">Bulma: Das Flexbox-Framework im Vergleich zu Foundation,
+                Bootstrap und Co. (t3n)</a>
+            <a href="https://coderacademy.edu.au/blog/general/battle-of-the-best-front-end-frameworks-bootstrap-vs-materialize"
+                class="list-group-item list-group-item-action">Battle of the Best Front-End Frameworks: Bootstrap vs
+                Materialize (Coder Academy Australia)</a>
+        </ul>
+        <h2 id="about">Über</h2>
+        <p>Diese Website wurde als interaktive Ausarbeitung zur Vorlesung "Agile Webentwicklung mit Python" entwickelt.
+        </p>
+        <div class="card" style="max-width: 500px;">
+            <div class="row no-gutters">
+                <div class="col-sm-5" style="background: #868e96;">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="card-img-top h-100" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                    </svg>
                 </div>
-                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-            </div> -->
-            <h3>Django</h3>
-            <p>
-                Wie bereits erwähnt lässt sich Bootstrap nicht wirklich mit Django vergleichen, da diese deutlich
-                unterschiedliche Einsatzzwecke bedienen.
-            </p>
-            <p>
-                Während das in Python geschriebene Django ein Full-Stack-Framework ist, beschäftigt sich Bootstrap mit
-                seiner Kombination aus CSS und JavaScript ausschließlich mit dem Frontend einer Webseite, also der dem
-                Nutzer präsentierten Oberfläche. Bootstrap kann hingegen <b>mit</b> Django verwendet werden.
-            </p>
-            <p>
-                Django verwendet die <em>Model-View-Controller</em>-Architektur, unterteilt alle Aufgaben einer Webseite
-                also in drei Schichten. Bootstrap kann in diesem Modell für den <em>View</em>-Teil komplementär eingesetzt
-                werden. Dazu werden einfach die Bootstrap-Komponenten in die HTML-Dateien integriert. Zuvor muss dafür eine
-                Bootstrapinstallation sichergestellt werden und die nötigen CSS und JavaScript-Dateien geladen werden, wie
-                im Setup-Kapitel beschrieben.
-            </p>
-            <p>
-                Das Paket <a href="https://pypi.org/project/django-bootstrap4/">django-bootstrap4</a> bietet zudem die
-                Möglichkeit, mittels Python-Programmcode Bootstrap-spezifische Komponenten zu erzeugen und somit visuell
-                ansprechende Templates zu erzeugen. Möchte man Bootstrap nur zur ansprechenderen Darstellung von
-                Django-Formularen verwenden, bietet sich <a
-                    href="https://pypi.org/project/django-crispy/">django-crispy-forms</a> an.
-            </p>
-            MOST POPULAR CSS Frameworks ON GITHUB:
-            <ol>
-                <li>Bootstrap 145k</li>
-                <li>Semantic-UI 48.7k (bzw. Fomantic UI)</li>
-                <li>Bulma 41.9k</li>
-                <li>materialize 38.2k</li>
-                <li>tailwind-css 31.6k</li>
-            </ol>
-            <h3>Foundation
-                <small class="text-muted">von ZURB</small>
-            </h3>
-            <p>
-                Text
-            </p>
-            <h3>Pure.CSS
-                <small class="text-muted">von Yahoo</small>
-            </h3>
-            <p>
-                Text
-            </p>
-            <h3>SemanticUI</h3>
-            <p>
-                Text
-            </p>
-            <h3>Materialize CSS</h3>
-            <p>
-                Text
-            </p>       
-
-            <h2 id="conclusion">Fazit</h2>
-            <p>
-                Bootstrap eignet sich sehr gut für den Einstieg in die Web-Frontend-Entwicklung, sowie für die schnelle Erstellung einfacher Webseiten. Die vorgefertigten Bausteine ermöglichen einen vereinfachten Entwicklungsprozess, wodurch besonders prototypische Webseiten sehr schnell umgesetzt werden können.
-            </p>
-            <p>
-                Wird hingegen eine einzigartige Webseite benötigt, muss ein großer Aufwand in die Modifikation der einzelnen Komponenten investiert werden, um sich von anderen mittels Bootstrap entwickelten Webseiten abzusetzen. 
-                <!-- ---Auch bei spezialisiertem Einsatz kann ein mächtigeres Framework, wie Vue, React oder Angular, hilfreicher sein, da in Bootstrap die Möglichkeiten schnell ausgereizt sind--- -->
-            </p>
-                 
-            <h2 id="sources">Quellen</h2>
-            Die Codebeispiele wurden von <a
-                href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/">TutorialRepublic</a> und der <a
-                href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">offiziellen Dokumentation</a>
-            entnommen.
-            <a href="https://bootstrapcreative.com/pros-cons-using-bootstrap-web-development/">BootstrapCreative</a>
-            <h2 id="about">Über</h2>
-            <p>Diese Website wurde als interaktive Ausarbeitung zur Vorlesung "Agile Webentwicklung mit Python"
-                entwickelt.</p>
-            <div class="card" style="max-width: 500px;">
-                <div class="row no-gutters">
-                    <div class="col-sm-5" style="background: #868e96;">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="card-img-top h-100" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                        </svg>
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="card-body" style="width: 18rem;" id="contact-card">
-                            <h5 class="card-title">Simon Müller</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Hochschule Augsburg</h6>
-                            <p class="card-text">Student im Master Informatik hier an der Hochschule in Augsburg.
-                            </p>
-                            <a href="mailto:simon.mueller3@hs-augsburg.de"
-                                class="btn btn-primary stretched-link">Kontaktieren</a>
-                        </div>
+                <div class="col-sm-7">
+                    <div class="card-body" style="width: 18rem;" id="contact-card">
+                        <h5 class="card-title">Simon Müller</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Hochschule Augsburg</h6>
+                        <p class="card-text">Student im Master Informatik hier an der Hochschule in Augsburg.
+                        </p>
+                        <a href="mailto:simon.mueller3@hs-augsburg.de"
+                            class="btn btn-primary">Kontaktieren</a>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     <!-- JS files: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
